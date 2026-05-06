@@ -1,11 +1,14 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { HiArrowDown, HiDownload, HiArrowRight } from 'react-icons/hi'
-import profilePic from '../assets/porfolio pic.png'
-import resumePDF from '../assets/Ooi Yi Thong_resume_latest.pdf'
+
 
 
 export default function Hero() {
+  // Define the paths as simple strings pointing to the public folder
+  const profilePic = '/assets/portfolio-pic.png'
+  const resumePDF = '/assets/Ooi Yi Thong_resume_latest.pdf'
+
   const scrollToProjects = () => {
     document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
   }
@@ -19,7 +22,7 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50"
     >
-      {/* Animated background blobs */}
+      {/* ... (Background blobs and grid dots stay the same) ... */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           className="blob absolute -top-32 -left-32 w-96 h-96 bg-blue-100/60"
@@ -36,7 +39,6 @@ export default function Hero() {
           animate={{ scale: [1, 1.2, 1] }}
           transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
         />
-        {/* Grid dots */}
         <div
           className="absolute inset-0 opacity-[0.03]"
           style={{
@@ -49,7 +51,6 @@ export default function Hero() {
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-32 flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
         {/* Text Content */}
         <div className="flex-1 text-center lg:text-left">
-          {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -60,18 +61,15 @@ export default function Hero() {
             Open to Opportunities
           </motion.div>
 
-          {/* Name */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-gray-900 leading-tight tracking-tight"
           >
-            Ooi Yi{' '}
-            <span className="gradient-text">Thong</span>
+            Ooi Yi <span className="gradient-text">Thong</span>
           </motion.h1>
 
-          {/* Subtitle */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -81,7 +79,6 @@ export default function Hero() {
             Software Engineering Graduate
           </motion.p>
 
-          {/* Intro */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -105,9 +102,12 @@ export default function Hero() {
               View Projects
               <HiArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
             </button>
+
+            {/* UPDATED: Path for resumePDF is now a string */}
             <a
               href={resumePDF}
-              download
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-secondary text-base group"
             >
               <HiDownload size={18} />
@@ -115,14 +115,14 @@ export default function Hero() {
             </a>
           </motion.div>
 
-          {/* Tech Stack pills */}
+          {/* Tech Stack pills ... (No changes needed here) */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6 }}
             className="mt-10 flex flex-wrap gap-2 justify-center lg:justify-start"
           >
-            {['React', 'Python', 'Java', 'Node.js', 'Kotlin', 'C++'].map((tech, i) => (
+            {['React', 'Python', 'Java', 'Node.js', 'Kotlin', 'C++'].map((tech) => (
               <span
                 key={tech}
                 className="px-3 py-1 text-xs font-medium rounded-full bg-white border border-gray-200 text-gray-600 shadow-sm"
@@ -138,10 +138,10 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
-          className="flex-shrink-0 flex flex-col items-center gap-6 mt-6"        >
+          className="flex-shrink-0 flex flex-col items-center gap-6 mt-6"
+        >
           <div className="relative">
-
-            {/* Outer ring animation */}
+            {/* Outer ring animations ... (No changes needed) */}
             <motion.div
               className="absolute inset-0 rounded-full border-2 border-blue-200"
               animate={{ scale: [1, 1.08, 1], opacity: [0.6, 0, 0.6] }}
@@ -159,12 +159,12 @@ export default function Hero() {
             <div className="relative w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full overflow-hidden border-4 border-white shadow-2xl shadow-blue-200/50">
               <img
                 src={profilePic}
-                alt="Ooi Yi Thong - Software Engineering Graduate"
+                alt="Ooi Yi Thong"
                 className="w-full h-full object-cover object-[center_30%]"
               />
             </div>
 
-            {/* Floating badge */}
+            {/* ... (Floating badges and scroll indicator stay the same) ... */}
             <motion.div
               animate={{ y: [-4, 4, -4] }}
               transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
@@ -192,14 +192,12 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
       <motion.button
         onClick={scrollToAbout}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-400 hover:text-blue-600 transition-colors group"
-        aria-label="Scroll down"
       >
         <span className="text-xs font-medium tracking-widest uppercase">Scroll</span>
         <motion.div

@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { HiMail, HiDownload } from 'react-icons/hi'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
-import resumePDF from '../assets/Ooi Yi Thong_resume_latest.pdf'
+
+// REMOVED: Static import is no longer needed for files in the public folder
+// import resumePDF from '../assets/Ooi Yi Thong_resume_latest.pdf'
 
 const contacts = [
   {
@@ -42,6 +44,9 @@ const contacts = [
 
 export default function Contact() {
   const [copied, setCopied] = useState(false)
+
+  // UPDATED: Path pointing to the public folder
+  const resumePDF = '/assets/Ooi Yi Thong_resume_latest.pdf'
 
   const copyEmail = () => {
     navigator.clipboard.writeText('ooiyithong@gmail.com')
@@ -102,11 +107,12 @@ export default function Contact() {
               </button>
               <a
                 href={resumePDF}
-                download
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-xl border border-white/30 text-white font-semibold text-sm hover:bg-white/10 transition-colors"
               >
                 <HiDownload size={18} />
-                Download Resume
+                View Resume
               </a>
             </div>
           </div>

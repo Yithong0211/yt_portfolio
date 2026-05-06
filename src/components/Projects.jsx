@@ -2,10 +2,10 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { HiArrowRight } from 'react-icons/hi'
 
-import ecommerceImg from '../assets/ecommerceimg.png'
-import matchaImg from '../assets/matchaimg.png'
+// 1. Updated image paths to match your public/assets folder structure
+const ecommerceImg = '/assets/ecommerceImg.png'
+const matchaImg = '/assets/matchaImg.png'
 
-// 1. Updated Project Data: Emoji references removed as they are redundant.
 const projects = [
   {
     id: 1,
@@ -84,15 +84,12 @@ export default function Projects() {
                   src={proj.img}
                   alt={proj.alt}
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                  onError={(e) => { e.target.style.display = 'none' }}
+                  // Added error handling to show a background color if the image fails to load
+                  onError={(e) => { e.target.style.opacity = '0' }}
                 />
-
-                {/* 
-                   Removed: The entire overlay content section including the emoji.
-                */}
               </div>
 
-              {/* Content Section (Remaining logic is unchanged) */}
+              {/* Content Section */}
               <div className="p-8 lg:p-10 flex flex-col justify-center">
                 <div className="flex items-center gap-3 mb-5">
                   <span className={`text-xs font-semibold px-3 py-1.5 rounded-full ${proj.badgeBg} ${proj.badgeText}`}>
@@ -128,8 +125,8 @@ export default function Projects() {
                 {/* CTA */}
                 <a
                   href={proj.url}
-                  target="_blank" // Recommended for external links
-                  rel="noopener noreferrer" // Recommended for external links
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`inline-flex items-center gap-2 w-fit px-6 py-3 rounded-xl text-white font-semibold text-sm bg-gradient-to-r ${proj.gradFrom} ${proj.gradTo} shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 group/btn`}
                 >
                   View Project

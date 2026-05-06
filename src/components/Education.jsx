@@ -2,18 +2,20 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { HiDocumentText, HiExternalLink } from 'react-icons/hi'
 
-import degreePDF from '../assets/Degree Transcipt.pdf'
-import foundationPDF from '../assets/Foundation Transcript.pdf'
-import spmPDF from '../assets/SPM.pdf'
+// REMOVED: Static imports are not needed for files in the public folder
+// import degreePDF from '../assets/Degree Transcipt.pdf'
+// import foundationPDF from '../assets/Foundation Transcript.pdf'
+// import spmPDF from '../assets/SPM.pdf'
 
 const eduCards = [
   {
     icon: '🏛️',
-    level: 'Bachelor\'s Degree',
+    level: "Bachelor's Degree",
     institution: 'Universiti Tunku Abdul Rahman',
     degree: 'Bachelor of Computer Science (Honours)',
     year: '2022 – 2026',
-    pdf: degreePDF,
+    // UPDATED: Using absolute path from the public directory
+    pdf: '/assets/Degree Transcipt.pdf',
     label: 'View Degree Transcript',
     accent: 'blue',
     bg: 'from-blue-50 to-indigo-50',
@@ -29,7 +31,8 @@ const eduCards = [
     institution: 'Universiti Tunku Abdul Rahman',
     degree: 'Foundation in Science',
     year: '2021 – 2022',
-    pdf: foundationPDF,
+    // UPDATED: Using absolute path from the public directory
+    pdf: '/assets/Foundation Transcript.pdf',
     label: 'View Foundation Transcript',
     accent: 'emerald',
     bg: 'from-emerald-50 to-teal-50',
@@ -45,7 +48,8 @@ const eduCards = [
     institution: 'SPM (Sijil Pelajaran Malaysia)',
     degree: 'Malaysian Certificate of Education',
     year: '2020',
-    pdf: spmPDF,
+    // UPDATED: Using absolute path from the public directory
+    pdf: '/assets/SPM.pdf',
     label: 'View SPM Result',
     accent: 'purple',
     bg: 'from-purple-50 to-violet-50',
