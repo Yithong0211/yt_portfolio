@@ -2,6 +2,8 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { HiArrowDown, HiDownload, HiArrowRight } from 'react-icons/hi'
 import profilePic from '../assets/porfolio pic.png'
+import resumePDF from '../assets/Ooi Yi Thong_resume_latest.pdf'
+
 
 export default function Hero() {
   const scrollToProjects = () => {
@@ -104,7 +106,7 @@ export default function Hero() {
               <HiArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
             </button>
             <a
-              href="/component/Ooi Yi Thong_resume_latest.pdf"
+              href={resumePDF}
               download
               className="btn-secondary text-base group"
             >
