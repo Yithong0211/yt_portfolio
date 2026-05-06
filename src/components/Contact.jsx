@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { HiMail, HiDownload } from 'react-icons/hi'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import resumePDF from '../assets/Ooi Yi Thong_resume_latest.pdf'
 
 const contacts = [
   {
@@ -100,7 +101,7 @@ export default function Contact() {
                 {copied ? '✓ Copied!' : 'ooiyithong@gmail.com'}
               </button>
               <a
-                href="/component/Ooi Yi Thong_resume_latest.pdf"
+                href={resumePDF}
                 download
                 className="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-xl border border-white/30 text-white font-semibold text-sm hover:bg-white/10 transition-colors"
               >

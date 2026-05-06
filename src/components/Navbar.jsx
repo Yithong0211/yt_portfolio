@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { HiMenu, HiX } from 'react-icons/hi'
+import resumePDF from '../assets/Ooi Yi Thong_resume_latest.pdf'
 
 const navLinks = [
-  { label: 'Home',      href: '#home' },
-  { label: 'About',     href: '#about' },
+  { label: 'Home', href: '#home' },
+  { label: 'About', href: '#about' },
   { label: 'Education', href: '#education' },
-  { label: 'Tools',     href: '#tools' },
-  { label: 'Projects',  href: '#projects' },
-  { label: 'Contact',   href: '#contact' },
+  { label: 'Tools', href: '#tools' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Contact', href: '#contact' },
 ]
 
 export default function Navbar() {
-  const [scrolled, setScrolled]   = useState(false)
-  const [menuOpen, setMenuOpen]   = useState(false)
-  const [active, setActive]       = useState('home')
+  const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [active, setActive] = useState('home')
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,11 +48,10 @@ export default function Navbar() {
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? 'bg-white/90 backdrop-blur-xl shadow-md shadow-black/5 border-b border-gray-100'
-            : 'bg-transparent'
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+          ? 'bg-white/90 backdrop-blur-xl shadow-md shadow-black/5 border-b border-gray-100'
+          : 'bg-transparent'
+          }`}
       >
         <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
           {/* Logo */}
@@ -73,11 +73,10 @@ export default function Navbar() {
               <button
                 key={link.href}
                 onClick={() => handleNav(link.href)}
-                className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
-                  active === link.href.slice(1)
-                    ? 'text-blue-600'
-                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
-                }`}
+                className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${active === link.href.slice(1)
+                  ? 'text-blue-600'
+                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                  }`}
               >
                 {active === link.href.slice(1) && (
                   <motion.span
@@ -94,7 +93,7 @@ export default function Navbar() {
           {/* CTA */}
           <div className="hidden md:flex items-center gap-3">
             <a
-              href="/component/Ooi Yi Thong_resume_latest.pdf"
+              href={resumePDF}
               download
               className="btn-primary text-sm py-2 px-4"
             >
@@ -128,11 +127,10 @@ export default function Navbar() {
                 <button
                   key={link.href}
                   onClick={() => handleNav(link.href)}
-                  className={`text-left px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
-                    active === link.href.slice(1)
-                      ? 'bg-blue-50 text-blue-600'
-                      : 'text-gray-700 hover:bg-gray-50'
-                  }`}
+                  className={`text-left px-4 py-3 rounded-xl text-sm font-medium transition-colors ${active === link.href.slice(1)
+                    ? 'bg-blue-50 text-blue-600'
+                    : 'text-gray-700 hover:bg-gray-50'
+                    }`}
                 >
                   {link.label}
                 </button>

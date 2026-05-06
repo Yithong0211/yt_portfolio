@@ -2,6 +2,10 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { HiDocumentText, HiExternalLink } from 'react-icons/hi'
 
+import degreePDF from '../assets/Degree Transcipt.pdf'
+import foundationPDF from '../assets/Foundation Transcript.pdf'
+import spmPDF from '../assets/SPM.pdf'
+
 const eduCards = [
   {
     icon: '🏛️',
@@ -9,7 +13,7 @@ const eduCards = [
     institution: 'Universiti Tunku Abdul Rahman',
     degree: 'Bachelor of Computer Science (Honours)',
     year: '2022 – 2026',
-    pdf: '/component/Degree Transcipt.pdf',
+    pdf: degreePDF,
     label: 'View Degree Transcript',
     accent: 'blue',
     bg: 'from-blue-50 to-indigo-50',
@@ -25,7 +29,7 @@ const eduCards = [
     institution: 'Universiti Tunku Abdul Rahman',
     degree: 'Foundation in Science',
     year: '2021 – 2022',
-    pdf: '/component/Foundation Transcript.pdf',
+    pdf: foundationPDF,
     label: 'View Foundation Transcript',
     accent: 'emerald',
     bg: 'from-emerald-50 to-teal-50',
@@ -41,7 +45,7 @@ const eduCards = [
     institution: 'SPM (Sijil Pelajaran Malaysia)',
     degree: 'Malaysian Certificate of Education',
     year: '2020',
-    pdf: '/component/SPM.pdf',
+    pdf: spmPDF,
     label: 'View SPM Result',
     accent: 'purple',
     bg: 'from-purple-50 to-violet-50',

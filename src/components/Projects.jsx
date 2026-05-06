@@ -2,9 +2,8 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { HiArrowRight } from 'react-icons/hi'
 
-// Correcting image paths. Assume these assets are in your public folder.
-const ecommerceImg = '/component/ecommerceimg.png'
-const matchaImg = '/component/matchaimg.png'
+import ecommerceImg from '../assets/ecommerceimg.png'
+import matchaImg from '../assets/matchaimg.png'
 
 // 1. Updated Project Data: Emoji references removed as they are redundant.
 const projects = [

@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { HiArrowDown, HiDownload, HiArrowRight } from 'react-icons/hi'
-const profilePic = '/component/porfolio pic.png'
+import profilePic from '../assets/porfolio pic.png'
 
 export default function Hero() {
   const scrollToProjects = () => {
