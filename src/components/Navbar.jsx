@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { HiMenu, HiX } from 'react-icons/hi'
-import resumePDF from '../assets/Ooi Yi Thong_resume_latest.pdf'
+
+const resumePDF = '/assets/Ooi Yi Thong_resume_latest.pdf'
 
 const navLinks = [
   { label: 'Home', href: '#home' },
@@ -136,7 +137,7 @@ export default function Navbar() {
                 </button>
               ))}
               <a
-                href="/component/Ooi Yi Thong_resume_latest.pdf"
+                href="/assets/Ooi Yi Thong_resume_latest.pdf"
                 download
                 className="mt-2 btn-primary text-sm justify-center"
                 onClick={() => setMenuOpen(false)}
